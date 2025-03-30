@@ -5,11 +5,12 @@ import yt_dlp
 import os
 import motor.motor_asyncio
 from bson.objectid import ObjectId
+from settings import settings
 
 router = APIRouter()
 
 # Kết nối MongoDB
-MONGO_URL = "mongodb://admin:password@localhost:27017"
+MONGO_URL = settings.MONGODB_URL
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_URL)
 db = client.transcription_db
 collection = db.transcriptions

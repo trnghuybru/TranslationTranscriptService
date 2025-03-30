@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from mistralai import Mistral
 import json
+from settings import settings
 
 router = APIRouter()
 
@@ -10,8 +11,8 @@ class QuestionRequest(BaseModel):
     question: str
 
 # API Key và Agent ID đặt trực tiếp trong code (chỉ dùng cho test)
-MISTRAL_API_KEY = "WsQHNm4ok6lv73ft737jjKGznNhSOSmi"
-AGENT_ID = "ag:5282d8a3:20250315:giai-thich-tieng-nhat:6be440b9"
+MISTRAL_API_KEY = settings.MISTRAL_API_KEY
+AGENT_ID = settings.AGENT_ID
 
 # Khởi tạo Mistral Client
 client = Mistral(api_key=MISTRAL_API_KEY)
