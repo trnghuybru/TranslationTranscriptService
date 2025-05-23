@@ -84,9 +84,9 @@ Upload an audio file for transcription. Returns a task ID that can be used to ch
 ```json
 {
   "model_size": "large-v3",
-  "device": "cuda",
-  "compute_type": "float16",
-  "language": "en",
+  "device": "cpu",
+  "compute_type": "int8",
+  "language": "ja",
   "batch_size": 16,
   "beam_size": 5,
   "word_timestamps": true,
